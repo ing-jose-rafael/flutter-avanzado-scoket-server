@@ -5,8 +5,8 @@ class Band {
 
   //regresa una nueva instancia de Band
   factory Band.fromMap(Map<String, dynamic> dta) => Band(
-        id: dta['id'],
-        name: dta['name'],
-        votes: dta['votes'],
+        id: dta.containsKey('id') ? dta['id'] : 'No-id',
+        name: dta.containsKey('name') ? dta['name'] : 'No-name',
+        votes: dta.containsKey('votes') ? dta['votes'] : 0,
       );
 }
